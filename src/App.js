@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import LandingPage from './containers/LandingPage'; 
+import InputPage from './containers/InputPage';
+import BuildCloze from './containers/BuildCloze';
+import ConfirmCloze from './containers/ConfirmCloze'; 
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      < BrowserRouter >
+        < Switch >
+            < Route exact path="/" component={ LandingPage } />         
+             < Route exact path="/input-text" component={ InputPage } />       
+             < Route exact path="/build-cloze" component={ BuildCloze } />
+             < Route exact path="/confirm-cloze" component={ ConfirmCloze } />
+        </Switch> 
+      </BrowserRouter>   
     );
   }
 }
