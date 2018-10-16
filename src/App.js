@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import LandingPage from './containers/LandingPage'; 
-import InputPage from './containers/InputPage';
-import BuildCloze from './containers/BuildCloze';
-import ConfirmCloze from './containers/ConfirmCloze'; 
+import LandingPage from './containers/LandingPage/LandingPage'; 
+import InputPage from './containers/InputPage/InputPage';
+import BuildCloze from './containers/BuildCloze/BuildCloze';
+import ConfirmCloze from './containers/ConfirmCloze/ConfirmCloze'; 
 
 import './App.css';
 
