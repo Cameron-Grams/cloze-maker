@@ -1,0 +1,18 @@
+#buttonDiv{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+
+#printButton{
+    text-align: center;
+    padding: 10px; 
+    margin: 10px; 
+}
+
+#printComponentDiv{
+    border: 1px solid white;
+    border-radius: 15px; 
+    padding: 20px; 
+}
