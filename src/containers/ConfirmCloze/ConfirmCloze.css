@@ -1,18 +1,25 @@
 #buttonDiv{
+    background-color: #2a3232;
     width: 100%; 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 
-#printButton{
+.printButton{
+    background-color: #4f6e6c;
     text-align: center;
     padding: 10px; 
     margin: 10px; 
 }
 
+.printButton:hover{
+    background-color: #bf3b33;
+}
+
 #printComponentDiv{
-    border: 1px solid white;
+    border: 1px solid #97c8bf;
+    color: #97c8bf;
     border-radius: 15px; 
     padding: 20px; 
 }

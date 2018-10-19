@@ -21,11 +21,14 @@ class ComponentToPrint extends React.Component{
 class ConfirmCloze extends React.Component {
   render() {
     return (
-      <div>
+      <div  >
+        <div  id="buttonDiv" >
         <ReactToPrint
-          trigger={() => <div id="buttonDiv" ><button id="printButton" >Print this out!</ button ></div> }
+          trigger={() => <div ><button className="printButton" >Print this out!</ button ></div> }
           content={() => this.componentRef}
         />
+        <button className="printButton" >Return to editing</button>
+        </div>
         <ComponentToPrint ref={el => (this.componentRef = el)} />
       </div>
     );
