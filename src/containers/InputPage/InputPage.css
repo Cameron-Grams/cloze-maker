@@ -1,0 +1,8 @@
+.submitButton{
+    background-color: blue;
+}
+
+.textField{
+    min-height: 200px;
+    min-width: 400px;
+}

@@ -10,6 +10,7 @@
     "react-scripts": "2.0.5",
     "react-to-print": "^2.0.0-alpha-4",
     "redux": "^4.0.1",
+    "redux-form": "^7.4.2",
     "save": "^2.3.2"
   },
   "scripts": {
