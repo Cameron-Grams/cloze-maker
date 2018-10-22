@@ -9,7 +9,6 @@ class InputPage extends React.Component{
     render() {
 
         const enterText = ( values ) => {
-            console.log( 'input page, values: ', values ); 
             this.props.registerOriginalText( values );
         }
 
