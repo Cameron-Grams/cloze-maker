@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
 import InputText from './InputText'; 
-import { registerOriginalText } from '../../actions/textActions';
+import { registerOriginalText, buildArrayOfWords } from '../../actions/textActions';
 import './InputPage.css'; 
 
 class InputPage extends React.Component{
@@ -11,6 +11,7 @@ class InputPage extends React.Component{
         const enterText = ( values ) => {
             console.log( 'input page, values: ', values ); 
             this.props.registerOriginalText( values );
+            this.props.buildArrayOfWords( values ); 
         }
 
         return (
@@ -28,5 +29,5 @@ const mapStateToProps = ( state ) => ({
     originalText: state.originalText
 })
 
-export default connect( mapStateToProps, { registerOriginalText } )( InputPage );
+export default connect( mapStateToProps, { registerOriginalText, buildArrayOfWords } )( InputPage );
 

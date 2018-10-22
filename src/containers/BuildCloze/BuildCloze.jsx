@@ -16,3 +16,4 @@ class BuildCloze extends React.Component{
 
 export default BuildCloze;
 
+// this page will have the selectable words from the array built from the original text
