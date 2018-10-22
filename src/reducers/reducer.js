@@ -12,16 +12,10 @@ const Reducer = ( state = initialState, action ) => {
         case( actionTypes.registerOriginalText ):{
             return { 
                 ...state,
-                originalText: action.data.originalTextInput }
-        }
-
-        case( actionTypes.loadOriginalWords ): 
-            console.log( 'in reducer with load original words ', action );
-
-            return {
-                ...state,
-                originalWords: action.data
+                originalText: action.data.originalTextInput,
+                originalWords: action.data.originalWords
             }
+        }
 
         default:
             return state
