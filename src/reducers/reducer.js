@@ -1,9 +1,11 @@
 import * as actionTypes from '../actions/actionTypes'; 
 
 const initialState = {
+    title: "",
     originalText: " Mystery Text... ",
     originalWords: [],
-    wordObjects: [ {} ]   
+    wordObjects: [ {} ],
+    vocabularyList: [ ]   
 };
 
 const Reducer = ( state = initialState, action ) => {
@@ -13,7 +15,8 @@ const Reducer = ( state = initialState, action ) => {
             return { 
                 ...state,
                 originalText: action.data.originalTextInput,
-                originalWords: action.data.originalWords
+                originalWords: action.data.originalWords,
+                wordObjects: action.data.wordObjects
             }
         }
 
