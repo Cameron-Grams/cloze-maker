@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
+import {  clozeWord } from '../../actions/textActions'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
@@ -10,7 +11,17 @@ class BuildCloze extends React.Component{
     };
     
     recognizeWord( positionValue ){
-        console.log( "Clicked a word", positionValue ); 
+
+
+        let targetWordObject = this.props.wordObjects.filter( possibleWord => {
+            if ( possibleWord.position === positionValue ){
+                return possibleWord;
+            }
+        })
+
+        console.log( "Clicked a word", targetWordObject ); 
+
+//        this.props.clozeWord( positionValue ); 
     }
 
     render() {
@@ -26,11 +37,24 @@ class BuildCloze extends React.Component{
             </span> )
         } );
 
+        let DisplayVocabulary = ( this.props.vocabularyList ).map( ( word, index ) => {
+            return(
+                <span className="vocabularySpan" 
+                    key={ index } 
+                >
+                    { word }{" "}
+                </span>
+            )
+        })
+
         return (
         <div className="App">
             <header className="App-header">
             <p>Build Cloze</p> 
+            <p>Target Text:</p>
             <p>{ DisplayText }</p>
+            <p>Text Vocbaulary:</p>
+            <p>{ DisplayVocabulary }</p>
             </header>
         </div>
         );
@@ -40,9 +64,10 @@ class BuildCloze extends React.Component{
 
 const mapStateToProps = ( state ) => ( {
     originalText: state.reducer.originalText,
-    wordObjects: state.reducer.wordObjects
+    wordObjects: state.reducer.wordObjects,
+    vocabularyList: state.reducer.vocabularyList
 })
 
-export default connect( mapStateToProps, { } )( BuildCloze );
+export default connect( mapStateToProps, { clozeWord } )( BuildCloze );
 
 // this page will have the selectable words from the array built from the original text

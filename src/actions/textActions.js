@@ -23,3 +23,9 @@ export function registerOriginalText( values ){
     }
 };
 
+export function clozeWord( positionWordObject ){
+
+
+
+
+}; 
