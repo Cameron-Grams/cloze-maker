@@ -1,23 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import DisplayText from './DisplayText'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
 
-    recognizeWord = ( e ) => {
-        console.log( "Clicked a word", e.value ); 
+    constructor( props ){
+        super( props );
+        this.recognizeWord = this.recognizeWord.bind( this ); 
+    };
+    
+    recognizeWord( positionValue ){
+        console.log( "Clicked a word", positionValue ); 
     }
 
     render() {
 
-        console.log( 'in build with ', this.props ); 
+        let Display = ( this.props.wordObjects ).map( item => {
+            return(  <span 
+                className="wordSpan" 
+                id={ `word_${ item.position }` } 
+                key={ item.position } 
+                onClick={ event => this.recognizeWord( item.position ) } 
+                value={ item.displayText }>
+                { item.displayText }{ " " } 
+            </span> )
+        } );
 
         return (
         <div className="App">
             <header className="App-header">
             <p>Build Cloze</p> 
-            <p>< DisplayText handleClick={ this.recognizeWord } inputArray={ this.props.wordObjects } /></p>
+            <p>{ Display }</p>
             </header>
         </div>
         );
