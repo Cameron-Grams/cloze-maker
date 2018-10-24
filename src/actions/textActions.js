@@ -24,6 +24,8 @@ export function registerOriginalText( values ){
 };
 
 export function clozeWord( positionWordObject ){
+    console.log( "in text action with position word object ", positionWordObject.originalWord );
+
     return({
         type: actionTypes.addClozeWord,
         data: {
@@ -34,3 +36,13 @@ export function clozeWord( positionWordObject ){
 
 
 }; 
+
+export function updateWordDisplay( newArrayWordObjects ){
+    
+    return( {
+        type: actionTypes.updateWordDisplay,
+        data:{
+            wordObjects: newArrayWordObjects
+        }
+    })
+}

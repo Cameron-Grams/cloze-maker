@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import {  clozeWord } from '../../actions/textActions'; 
+import {  clozeWord, updateWordDisplay } from '../../actions/textActions'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
@@ -11,17 +11,17 @@ class BuildCloze extends React.Component{
     };
     
     recognizeWord( positionValue ){
-
-
-        let targetWordObject = this.props.wordObjects.filter( possibleWord => {
-            if ( possibleWord.position === positionValue ){
-                return possibleWord;
+        let updatedWordObjects = this.props.wordObjects.map( singleWordObject => {
+            if ( singleWordObject.position === positionValue ){
+                singleWordObject.displayShowing = '_____________'; 
             };
+            return singleWordObject; 
         })
-
-        console.log( "Clicked a word", targetWordObject ); 
-
-        this.props.clozeWord( targetWordObject ); 
+        let targetWordObject = this.props.wordObjects.filter( possibleWord => 
+            possibleWord.position === positionValue
+        )
+        this.props.updateWordDisplay( updatedWordObjects );  
+        this.props.clozeWord( targetWordObject[ 0 ] ); 
     }
 
     render() {
@@ -50,10 +50,10 @@ class BuildCloze extends React.Component{
         return (
         <div className="App">
             <header className="App-header">
-            <p>Build Cloze</p> 
+            <h3>Build Cloze</h3> 
             <p>Target Text:</p>
             <p>{ DisplayText }</p>
-            <p>Text Vocbaulary:</p>
+            <h3>Text Vocbaulary:</h3>
             <p>{ DisplayVocabulary }</p>
             </header>
         </div>
@@ -68,6 +68,6 @@ const mapStateToProps = ( state ) => ( {
     vocabularyList: state.reducer.vocabularyList
 })
 
-export default connect( mapStateToProps, { clozeWord } )( BuildCloze );
+export default connect( mapStateToProps, { clozeWord, updateWordDisplay } )( BuildCloze );
 
 // this page will have the selectable words from the array built from the original text

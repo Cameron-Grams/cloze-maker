@@ -27,6 +27,13 @@ const Reducer = ( state = initialState, action ) => {
             }
         }
 
+        case( actionTypes.updateWordDisplay ): {
+            return {
+                ...state,
+                wordObjects: action.data.wordObjects
+            }
+        }
+
         default:
             return state
         ;
