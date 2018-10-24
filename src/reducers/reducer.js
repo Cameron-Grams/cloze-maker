@@ -20,6 +20,13 @@ const Reducer = ( state = initialState, action ) => {
             }
         }
 
+        case( actionTypes.addClozeWord ): {
+            return {
+                ...state,
+                vocabularyList: [ ...state.vocabularyList, action.data.vocabularyList ]
+            }
+        }
+
         default:
             return state
         ;

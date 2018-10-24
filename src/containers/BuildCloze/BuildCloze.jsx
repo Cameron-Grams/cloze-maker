@@ -16,12 +16,12 @@ class BuildCloze extends React.Component{
         let targetWordObject = this.props.wordObjects.filter( possibleWord => {
             if ( possibleWord.position === positionValue ){
                 return possibleWord;
-            }
+            };
         })
 
         console.log( "Clicked a word", targetWordObject ); 
 
-//        this.props.clozeWord( positionValue ); 
+        this.props.clozeWord( targetWordObject ); 
     }
 
     render() {
@@ -33,7 +33,7 @@ class BuildCloze extends React.Component{
                 key={ item.position } 
                 onClick={ event => this.recognizeWord( item.position ) } 
                 value={ item.displayText }>
-                { item.displayText }{ " " } 
+                { item.displayShowing }{ " " } 
             </span> )
         } );
 

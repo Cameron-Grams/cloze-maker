@@ -6,8 +6,8 @@ export function registerOriginalText( values ){
     const buildArrayOfWordObjects = arrayOfWords.map( ( word, index ) => {
         let wordObject = {};
         wordObject.position = index;
-        wordObject.originalText = word;
-        wordObject.displayText = word;
+        wordObject.originalWord = word;
+        wordObject.displayShowing = word;
         wordObject.selected = false;
         return wordObject;
     } );
@@ -24,7 +24,12 @@ export function registerOriginalText( values ){
 };
 
 export function clozeWord( positionWordObject ){
-
+    return({
+        type: actionTypes.addClozeWord,
+        data: {
+            vocabularyList: positionWordObject.originalWord 
+        }
+    })
 
 
 
