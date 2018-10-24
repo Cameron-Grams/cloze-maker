@@ -15,7 +15,7 @@ class BuildCloze extends React.Component{
 
     render() {
 
-        let Display = ( this.props.wordObjects ).map( item => {
+        let DisplayText = ( this.props.wordObjects ).map( item => {
             return(  <span 
                 className="wordSpan" 
                 id={ `word_${ item.position }` } 
@@ -30,7 +30,7 @@ class BuildCloze extends React.Component{
         <div className="App">
             <header className="App-header">
             <p>Build Cloze</p> 
-            <p>{ Display }</p>
+            <p>{ DisplayText }</p>
             </header>
         </div>
         );
