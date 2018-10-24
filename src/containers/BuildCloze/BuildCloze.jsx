@@ -9,10 +9,6 @@ class BuildCloze extends React.Component{
         console.log( "Clicked a word", e.value ); 
     }
 
-
-    // https://stackoverflow.com/questions/38093760/how-to-access-a-dom-element-in-react-what-is-the-equilvalent-of-document-getele
-    // try working the access by refs  
-
     render() {
 
         console.log( 'in build with ', this.props ); 
