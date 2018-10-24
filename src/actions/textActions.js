@@ -23,13 +23,13 @@ export function registerOriginalText( values ){
     }
 };
 
-export function clozeWord( positionWordObject ){
-    console.log( "in text action with position word object ", positionWordObject.originalWord );
+export function vocabularyWord( selectedWord ){
+    console.log( "in text action with position word object ", selectedWord );
 
     return({
-        type: actionTypes.addClozeWord,
+        type: actionTypes.addVocabularyWord,
         data: {
-            vocabularyList: positionWordObject.originalWord 
+            vocabularyList: selectedWord 
         }
     })
 

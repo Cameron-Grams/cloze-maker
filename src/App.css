@@ -24,6 +24,16 @@
    light #f5f8f5
    */
 
+.submitButton{
+    background-color: #4f6e6c;
+}
+
+.submitButton:hover{
+    background-color: #bf3b33;
+    color: #f5f8f5;
+}
+
+
 button{
   border: 1px solid transparent;
 }

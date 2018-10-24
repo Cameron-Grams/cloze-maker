@@ -20,7 +20,7 @@ const Reducer = ( state = initialState, action ) => {
             }
         }
 
-        case( actionTypes.addClozeWord ): {
+        case( actionTypes.addVocabularyWord ): {
             return {
                 ...state,
                 vocabularyList: [ ...state.vocabularyList, action.data.vocabularyList ]

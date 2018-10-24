@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import {  clozeWord, updateWordDisplay } from '../../actions/textActions'; 
+import {  vocabularyWord, updateWordDisplay } from '../../actions/textActions'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
@@ -21,11 +21,10 @@ class BuildCloze extends React.Component{
             possibleWord.position === positionValue
         )
         this.props.updateWordDisplay( updatedWordObjects );  
-        this.props.clozeWord( targetWordObject[ 0 ] ); 
+        this.props.vocabularyWord( targetWordObject[ 0 ].originalWord ); 
     }
 
     render() {
-
         let DisplayText = ( this.props.wordObjects ).map( item => {
             return(  <span 
                 className="wordSpan" 
@@ -50,8 +49,8 @@ class BuildCloze extends React.Component{
         return (
         <div className="App">
             <header className="App-header">
-            <h3>Build Cloze</h3> 
-            <p>Target Text:</p>
+            <h1>Build Cloze</h1> 
+            <h3>Target Text:</h3>
             <p>{ DisplayText }</p>
             <h3>Text Vocbaulary:</h3>
             <p>{ DisplayVocabulary }</p>
@@ -68,6 +67,6 @@ const mapStateToProps = ( state ) => ( {
     vocabularyList: state.reducer.vocabularyList
 })
 
-export default connect( mapStateToProps, { clozeWord, updateWordDisplay } )( BuildCloze );
+export default connect( mapStateToProps, { vocabularyWord, updateWordDisplay } )( BuildCloze );
 
 // this page will have the selectable words from the array built from the original text
