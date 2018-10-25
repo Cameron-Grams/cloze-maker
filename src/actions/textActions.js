@@ -25,7 +25,6 @@ export function registerOriginalText( values ){
 
 export function vocabularyWord( selectedWord ){
     console.log( "in text action with position word object ", selectedWord );
-
     return({
         type: actionTypes.addVocabularyWord,
         data: {

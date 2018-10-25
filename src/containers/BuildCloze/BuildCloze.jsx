@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
 import {  vocabularyWord, updateWordDisplay } from '../../actions/textActions'; 
+import AddVocabularyWords from './AddVocabularyWords'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
@@ -8,6 +9,8 @@ class BuildCloze extends React.Component{
     constructor( props ){
         super( props );
         this.recognizeWord = this.recognizeWord.bind( this ); 
+        this.moreVocab = this.moreVocab.bind( this ); 
+        this.goToConfirm = this.goToConfirm.bind( this ); 
     };
     
     recognizeWord( positionValue ){
@@ -22,6 +25,16 @@ class BuildCloze extends React.Component{
         )
         this.props.updateWordDisplay( updatedWordObjects );  
         this.props.vocabularyWord( targetWordObject[ 0 ].originalWord ); 
+    }
+
+    moreVocab( wordValue ){
+        console.log( 'in build cloze with: ', wordValue )
+        let newWordArray = wordValue.additionalVocabulary.split( " " );
+        newWordArray.forEach( ( newWord ) => this.props.vocabularyWord( newWord ) ); 
+    }
+
+    goToConfirm(){
+        this.props.history.push( '/confirm-cloze' ); 
     }
 
     render() {
@@ -54,6 +67,8 @@ class BuildCloze extends React.Component{
             <p>{ DisplayText }</p>
             <h3>Text Vocbaulary:</h3>
             <p>{ DisplayVocabulary }</p>
+            < AddVocabularyWords onSubmit={ this.moreVocab } />
+            <div><button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button></div>
             </header>
         </div>
         );
