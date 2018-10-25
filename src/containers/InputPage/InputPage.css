@@ -1,4 +1,10 @@
 .textField{
+    width: 70%; 
     min-height: 200px;
+    min-width: 400px;
+}
+
+.textTitle{
+    width: 70%;
     min-width: 400px;
 }

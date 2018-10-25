@@ -7,9 +7,7 @@ import './InputPage.css';
 class InputPage extends React.Component{
 
     render() {
-
         const enterText = ( values ) => {
-
             this.props.registerOriginalText( values );
             this.props.history.push( "/build-cloze" );
         }

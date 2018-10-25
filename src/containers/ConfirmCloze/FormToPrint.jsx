@@ -27,12 +27,13 @@ class FormToPrint extends React.Component{
         })
 
         return (
-        <div className="App">
-            <header className="App-header">
+        <div className="finalForm">
+            <header className="finalForm-header">
             <div id="printComponentDiv">  
-                <h1>Title of the Worksheet</h1>
-                <p>Confirm Cloze content</p> 
+                <h1 id="finalTitle" >{ this.props.title }</h1>
+                <h4>Exercise Vocabulary:</h4>
                 <p>{ DisplayVocabulary }</p>
+                <h4>Exercise Text:</h4>
                 <p>{ DisplayText }</p>
             </div>
             </header>
@@ -43,6 +44,7 @@ class FormToPrint extends React.Component{
 }
 
 const mapStateToProps = ( state ) => ( {
+    title: state.reducer.title,
     wordObjects: state.reducer.wordObjects,
     vocabularyList: state.reducer.vocabularyList
 })

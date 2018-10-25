@@ -5,6 +5,7 @@ export function registerOriginalText( values ){
 
     const buildArrayOfWordObjects = arrayOfWords.map( ( word, index ) => {
         let wordObject = {};
+
         wordObject.position = index;
         wordObject.originalWord = word;
         wordObject.displayShowing = word;
@@ -12,11 +13,14 @@ export function registerOriginalText( values ){
         return wordObject;
     } );
 
+    const title = values.textTitleInput;
+
 
     return{
         type: actionTypes.registerOriginalText,
         data: { 
             ...values,
+            title: title, 
             originalWords: [ ...arrayOfWords ],
             wordObjects: [ ...buildArrayOfWordObjects ]
         }

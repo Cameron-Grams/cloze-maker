@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'; 
 import ReactToPrint from 'react-to-print';
 import FormToPrint from './FormToPrint'; 
 import './ConfirmCloze.css';
@@ -9,10 +10,10 @@ class ConfirmCloze extends React.Component {
       <div  >
         <div  id="buttonDiv" >
         <ReactToPrint
-          trigger={() => <div ><button className="printButton" >Print this out!</ button ></div> }
+          trigger={() => <div ><button className="clozeButton" >Print this out!</ button ></div> }
           content={() => this.componentRef}
         />
-        <button className="printButton" >Return to editing</button>
+        <button className="clozeButton" onClick={ e => this.props.history.push( 'input-text' ) } >Return to editing</button>
         </div>
         <FormToPrint ref={el => (this.componentRef = el)} />
       </div>
@@ -21,7 +22,7 @@ class ConfirmCloze extends React.Component {
 }
 
 
-export default ConfirmCloze; 
+export default connect()( ConfirmCloze ); 
 
 
 
