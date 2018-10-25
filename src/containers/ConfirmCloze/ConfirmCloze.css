@@ -27,19 +27,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
   color: #f5f8f5;
 }
 
 #finalTitle{
+    text-align: center;
     color: black;
+}
+
+.textToPrint{
+    font-size: 12px;
 }
 
 #printComponentDiv{
     max-width: 75%;
-    border: 1px solid black;
     color: black;
-    border-radius: 15px; 
     padding: 20px; 
 }

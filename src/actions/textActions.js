@@ -3,6 +3,9 @@ import * as actionTypes from './actionTypes';
 export function registerOriginalText( values ){
     let arrayOfWords = values.originalTextInput.split( " " );
 
+    let paragraphs = values.originalTextInput.split( "\n" ); 
+    console.log( paragraphs ); 
+
     const buildArrayOfWordObjects = arrayOfWords.map( ( word, index ) => {
         let wordObject = {};
 

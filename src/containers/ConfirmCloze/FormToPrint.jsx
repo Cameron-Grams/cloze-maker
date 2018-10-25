@@ -32,9 +32,9 @@ class FormToPrint extends React.Component{
             <div id="printComponentDiv">  
                 <h1 id="finalTitle" >{ this.props.title }</h1>
                 <h4>Exercise Vocabulary:</h4>
-                <p>{ DisplayVocabulary }</p>
+                <p  className="textToPrint">{ DisplayVocabulary }</p>
                 <h4>Exercise Text:</h4>
-                <p>{ DisplayText }</p>
+                <p className="textToPrint">{ DisplayText }</p>
             </div>
             </header>
         </div>

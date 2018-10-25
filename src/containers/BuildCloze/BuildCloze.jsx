@@ -64,7 +64,7 @@ class BuildCloze extends React.Component{
             <header className="App-header">
             <h1>Build Cloze</h1> 
             <h3>Target Text:</h3>
-            <p>{ DisplayText }</p>
+            <p className="displayTargetText">{ DisplayText }</p>
             <h3>Text Vocbaulary:</h3>
             <p>{ DisplayVocabulary }</p>
             < AddVocabularyWords onSubmit={ this.moreVocab } />

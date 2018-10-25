@@ -5,3 +5,7 @@
 h1, h3{
     color: #97c8bf;
 }
+
+.displayTargetText{
+    max-width: 80%;
+}
