@@ -4,7 +4,27 @@ export function registerOriginalText( values ){
     let arrayOfWords = values.originalTextInput.split( " " );
 
     let paragraphs = values.originalTextInput.split( "\n" ); 
-    console.log( paragraphs ); 
+    console.log( 'in text action deriving paragraphs: ', paragraphs ); 
+
+    // cycle through paragraphs, build word objects with a field paragrapahs
+
+    // allWordObjects = [];    <-- append the objects from each sentence into this 
+
+    //  Design choice:  which is better: to hold separate paragraphs of word objects or a single array
+    // with paragraph information as an element of the object? 
+
+    //  on the objects should make finding it on the DOM easier.  Yes?  
+
+
+    /* paragraphs.forEach( ( sentence, index ) => {
+           sentence.map( ( word, index ) => {
+
+           })
+    })
+
+
+*/
+
 
     const buildArrayOfWordObjects = arrayOfWords.map( ( word, index ) => {
         let wordObject = {};
