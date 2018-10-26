@@ -15,6 +15,10 @@ export function registerOriginalText( values ){
 
     //  on the objects should make finding it on the DOM easier.  Yes?  
 
+    //  Do both: store the paragraphs in paragraph arrays and retain the paragraph number on the word objects;
+    //    arrays will make display simpiler and the object information will make selection easier
+
+    //  we are going to need to test the SINGLE PARAGRAPH case on whatever choice... 
 
     /* paragraphs.forEach( ( sentence, index ) => {
            sentence.map( ( word, index ) => {
