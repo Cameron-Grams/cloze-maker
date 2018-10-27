@@ -13,9 +13,9 @@ class BuildCloze extends React.Component{
         this.goToConfirm = this.goToConfirm.bind( this ); 
     };
     
-    recognizeWord( positionValue ){
+    recognizeWord( paragraphValue, positionValue ){
         let updatedWordObjects = this.props.wordObjects.map( singleWordObject => {
-            if ( singleWordObject.position === positionValue ){
+            if ( ( singleWordObject.paragraph === paragraphValue ) && ( singleWordObject.position === positionValue ) ) {
                 singleWordObject.displayShowing = '_____________'; 
             };
             return singleWordObject; 
@@ -38,16 +38,26 @@ class BuildCloze extends React.Component{
     }
 
     render() {
-        let DisplayText = ( this.props.wordObjects ).map( item => {
-            return(  <span 
-                className="wordSpan" 
-                id={ `word_${ item.position }` } 
-                key={ item.position } 
-                onClick={ event => this.recognizeWord( item.position ) } 
-                value={ item.displayText }>
-                { item.displayShowing }{ " " } 
-            </span> )
-        } );
+        let DisplayText = this.props.paragraphs.map( ( paragraphArray ) => {
+            let DisplayParagraph = paragraphArray.map( individualParagraph => {
+
+                let innerArrayObjects = individualParagraph.map( ( item ) => {   
+                    return(  <span 
+                            className="wordSpan" 
+                            id={ `paragraph_${ item.paragraph }_word_${ item.position }` } 
+                            key={ item.position } 
+                            onClick={ event => this.recognizeWord( item.paragraph, item.position ) } 
+                            value={ item.displayText }>
+                            { item.displayShowing }{ " " } 
+                        </span> )
+                    } ); 
+                return innerArrayObjects; 
+            
+            } )
+            return(
+                <p>{ DisplayParagraph }</p>
+            )
+        })
 
         let DisplayVocabulary = ( this.props.vocabularyList ).map( ( word, index ) => {
             return(
@@ -78,7 +88,7 @@ class BuildCloze extends React.Component{
 }
 
 const mapStateToProps = ( state ) => ( {
-    originalText: state.reducer.originalText,
+    paragraphs: state.reducer.paragraphs,
     wordObjects: state.reducer.wordObjects,
     vocabularyList: state.reducer.vocabularyList
 })

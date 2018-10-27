@@ -1,10 +1,12 @@
 import * as actionTypes from './actionTypes';
 
 export function registerOriginalText( values ){
-    let arrayOfWords = values.originalTextInput.split( " " );
 
-    let paragraphs = values.originalTextInput.split( "\n" ); 
-    console.log( 'in text action deriving paragraphs: ', paragraphs ); 
+    let paragraphs = [];
+    let allWordObjects = [];
+
+    let paragraphStrings = values.originalTextInput.split( "\n" ); 
+    console.log( 'in text action deriving paragraphs: ', paragraphStrings ); 
 
     // cycle through paragraphs, build word objects with a field paragrapahs
 
@@ -25,31 +27,38 @@ export function registerOriginalText( values ){
 
            })
     })
-
-
 */
 
+    paragraphStrings.forEach( ( paragraph, pindex ) => {
+        const wordsInParagraph = paragraph.split( " " );
 
-    const buildArrayOfWordObjects = arrayOfWords.map( ( word, index ) => {
-        let wordObject = {};
+        const paragraphWordArray = wordsInParagraph.map( ( word, index ) => {
+            let wordObject = {};
 
-        wordObject.position = index;
-        wordObject.originalWord = word;
-        wordObject.displayShowing = word;
-        wordObject.selected = false;
-        return wordObject;
-    } );
+            wordObject.paragraph = pindex;
+            wordObject.position = index;
+            wordObject.originalWord = word;
+            wordObject.displayShowing = word;
+            wordObject.selected = false;
+            
+            allWordObjects.push( wordObject ); 
+            return wordObject;
+        } ); 
+        paragraphs.push( paragraphWordArray ); 
+        return paragraphs; 
+    }); 
 
     const title = values.textTitleInput;
 
+    console.log( " in text actions with paragraphs: ", paragraphs ); 
 
     return{
         type: actionTypes.registerOriginalText,
         data: { 
             ...values,
             title: title, 
-            originalWords: [ ...arrayOfWords ],
-            wordObjects: [ ...buildArrayOfWordObjects ]
+            wordObjects: [ ...allWordObjects ],
+            paragraphs: [ ...paragraphs ] 
         }
     }
 };
