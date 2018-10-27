@@ -18,9 +18,9 @@ const Reducer = ( state = initialState, action ) => {
             return { 
                 ...state,
                 title: action.data.title,
-                originalText: action.data.originalTextInput,
-                originalWords: action.data.originalWords,
+                paragraphs: action.data.paragraphs,
                 wordObjects: action.data.wordObjects
+
             }
         }
 

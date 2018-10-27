@@ -38,11 +38,11 @@ class BuildCloze extends React.Component{
     }
 
     render() {
-        let DisplayText = this.props.paragraphs.map( ( paragraphArray ) => {
-            let DisplayParagraph = paragraphArray.map( individualParagraph => {
+        let DisplayText = this.props.paragraphs.map( ( paragraphArray, pindex ) => {
 
-                let innerArrayObjects = individualParagraph.map( ( item ) => {   
-                    return(  <span 
+            let DisplayParagraph = paragraphArray.map( item => {
+
+                return(  <span 
                             className="wordSpan" 
                             id={ `paragraph_${ item.paragraph }_word_${ item.position }` } 
                             key={ item.position } 
@@ -50,14 +50,13 @@ class BuildCloze extends React.Component{
                             value={ item.displayText }>
                             { item.displayShowing }{ " " } 
                         </span> )
-                    } ); 
-                return innerArrayObjects; 
+                } ); 
             
-            } )
             return(
-                <p>{ DisplayParagraph }</p>
+                <p className="displayTargetText" key={ pindex }>{ DisplayParagraph }</p>
             )
         })
+
 
         let DisplayVocabulary = ( this.props.vocabularyList ).map( ( word, index ) => {
             return(
@@ -74,7 +73,8 @@ class BuildCloze extends React.Component{
             <header className="App-header">
             <h1>Build Cloze</h1> 
             <h3>Target Text:</h3>
-            <p className="displayTargetText">{ DisplayText }</p>
+
+            { DisplayText }
 
             <h3>Text Vocbaulary:</h3>
             <p>{ DisplayVocabulary }</p>
