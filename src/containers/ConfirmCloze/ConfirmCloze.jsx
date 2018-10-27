@@ -10,10 +10,10 @@ class ConfirmCloze extends React.Component {
       <div  >
         <div  id="buttonDiv" >
         <ReactToPrint
-          trigger={() => <div ><button className="clozeButton" >Print this out!</ button ></div> }
+          trigger={() => <div ><button className="clozeButton submitButton" >Print this out!</ button ></div> }
           content={() => this.componentRef}
         />
-        <button className="clozeButton" onClick={ e => this.props.history.push( 'input-text' ) } >Return to editing</button>
+        <button className="clozeButton submitButton" onClick={ e => this.props.history.push( 'input-text' ) } >Return to editing</button>
         </div>
         <FormToPrint ref={el => (this.componentRef = el)} />
       </div>

@@ -4,8 +4,8 @@ import { Field, reduxForm } from 'redux-form';
 let InputText = ( props ) => {
     return(
         <form onSubmit={ props.handleSubmit } >
-            <div>< Field className = "textTitle" name="textTitleInput" component={ "input" } placeholder="Enter Title"   /></div>
-            <div>< Field className = "textField" name="originalTextInput" component={ "textarea" } placeholder="Enter Text"   /></div>
+            <div>< Field className = "textTitle generalInput" name="textTitleInput" component={ "input" } placeholder="Enter Title"   /></div>
+            <div>< Field className = "textField generalInput" name="originalTextInput" component={ "textarea" } placeholder="Enter Text"   /></div>
             <button className="submitButton" type="submit" >Input Text</button>
         </form>
     )

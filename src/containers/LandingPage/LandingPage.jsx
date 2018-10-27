@@ -6,9 +6,9 @@ class LandingPage extends React.Component{
         return (
         <div className="App">
             <header className="App-header">
-            <p>Landing Page</p> 
+            <h3>Landing Page</h3> 
             <p>Text display, the final print is set to 12 on the print</p>
-            <button onClick={ e => this.props.history.push( '/input-text' ) } >Advace to Input Text</button>
+            <button className="submitButton" onClick={ e => this.props.history.push( '/input-text' ) } >Advace to Input Text</button>
             </header>
         </div>
         );

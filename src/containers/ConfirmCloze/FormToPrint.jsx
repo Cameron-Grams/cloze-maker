@@ -6,15 +6,24 @@ class FormToPrint extends React.Component{
 
     render() {
 
-        let DisplayText = ( this.props.wordObjects ).map( ( item, index ) => {
-            return(  <span 
-                className="wordSpan" 
-                key={ index }
-                id={ `word_${ item.position }` } >
-                { item.displayShowing }{ " " } 
-                
-            </span> )
-        } );
+        let DisplayText = this.props.paragraphs.map( ( paragraphArray, pindex ) => {
+
+            let DisplayParagraph = paragraphArray.map( item => {
+
+                return(  <span 
+                            className="wordSpan" 
+                            id={ `paragraph_${ item.paragraph }_word_${ item.position }` } 
+                            key={ item.position } 
+                            onClick={ event => this.recognizeWord( item.paragraph, item.position ) } 
+                            value={ item.displayText }>
+                            { item.displayShowing }{ " " } 
+                        </span> )
+                } ); 
+            
+            return(
+                <p className="textToPrint" key={ pindex }>{ DisplayParagraph }</p>
+            )
+        })
 
         let DisplayVocabulary = ( this.props.vocabularyList ).map( ( word, index ) => {
             return(
@@ -45,6 +54,7 @@ class FormToPrint extends React.Component{
 
 const mapStateToProps = ( state ) => ( {
     title: state.reducer.title,
+    paragraphs: state.reducer.paragraphs,
     wordObjects: state.reducer.wordObjects,
     vocabularyList: state.reducer.vocabularyList
 })

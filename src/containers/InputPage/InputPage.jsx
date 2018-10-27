@@ -15,7 +15,7 @@ class InputPage extends React.Component{
         return (
         <div className="App">
             <header className="App-header">
-            <p>Input Text</p> 
+            <h3>Input Text</h3> 
             < InputText onSubmit={ enterText } /> 
             </header>
         </div>

@@ -2,10 +2,11 @@
     color: brown; 
 }
 
-h1, h3{
-    color: #97c8bf;
-}
 
 .displayTargetText{
     max-width: 80%;
+}
+
+.newVocab{
+   font-size: calc(10px + 2vmin);
 }

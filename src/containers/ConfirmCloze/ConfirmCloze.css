@@ -1,5 +1,5 @@
 #buttonDiv{
-    background-color: #2a3232;
+    background-color: #d5c9b7;
     width: 100%; 
     display: flex;
     justify-content: space-around;
@@ -7,14 +7,9 @@
 
 
 .clozeButton{
-    background-color: #4f6e6c;
     text-align: center;
     padding: 10px; 
     margin: 10px; 
-}
-
-.clozeButton:hover{
-    background-color: #bf3b33;
 }
 
 .finalForm{
@@ -23,7 +18,7 @@
 
 .finalForm-header {
   background-color: white;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;

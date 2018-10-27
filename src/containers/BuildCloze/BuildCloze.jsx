@@ -21,8 +21,9 @@ class BuildCloze extends React.Component{
             return singleWordObject; 
         })
         let targetWordObject = this.props.wordObjects.filter( possibleWord => 
-            possibleWord.position === positionValue
+            (  possibleWord.paragraph === paragraphValue && possibleWord.position === positionValue )
         )
+
         this.props.updateWordDisplay( updatedWordObjects );  
         this.props.vocabularyWord( targetWordObject[ 0 ].originalWord ); 
     }
@@ -71,14 +72,16 @@ class BuildCloze extends React.Component{
         return (
         <div className="App">
             <header className="App-header">
-            <h1>Build Cloze</h1> 
-            <h3>Target Text:</h3>
+                <h1>Build Cloze</h1> 
 
-            { DisplayText }
+                  <h3>Text Vocbaulary:</h3>
+                    <p>{ DisplayVocabulary }</p>
+                    < AddVocabularyWords onSubmit={ this.moreVocab } />
 
-            <h3>Text Vocbaulary:</h3>
-            <p>{ DisplayVocabulary }</p>
-            < AddVocabularyWords onSubmit={ this.moreVocab } />
+                <h3>Target Text:</h3>
+
+                    { DisplayText }
+
             <div><button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button></div>
             </header>
         </div>
