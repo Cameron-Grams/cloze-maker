@@ -15,7 +15,7 @@ const DisplayText = ( props ) => ( props.allParagraphs ).map( ( paragraphArray, 
             } ); 
         
         return(
-            <p className="displayTargetText" key={ pindex }>{ DisplayParagraph }</p>
+            <p className={ props.className } key={ pindex }>{ DisplayParagraph }</p>
         )
     })
 

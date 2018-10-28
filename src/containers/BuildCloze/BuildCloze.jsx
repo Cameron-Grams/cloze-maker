@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {  vocabularyWord, updateWordDisplay } from '../../actions/textActions'; 
 import AddVocabularyWords from './AddVocabularyWords'; 
 import DisplayText from '../../components/DisplayText'; 
+import DisplayVocabulary from '../../components/DisplayVocabulary'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
@@ -40,36 +41,6 @@ class BuildCloze extends React.Component{
     }
 
     render() {
-        /*
-        let DisplayText = this.props.paragraphs.map( ( paragraphArray, pindex ) => {
-
-            let DisplayParagraph = paragraphArray.map( item => {
-
-                return(  <span 
-                            className="wordSpan" 
-                            id={ `paragraph_${ item.paragraph }_word_${ item.position }` } 
-                            key={ item.position } 
-                            onClick={ event => this.recognizeWord( item.paragraph, item.position ) } 
-                            value={ item.displayText }>
-                            { item.displayShowing }{ " " } 
-                        </span> )
-                } ); 
-            
-            return(
-                <p className="displayTargetText" key={ pindex }>{ DisplayParagraph }</p>
-            )
-        })
-*/
-
-        let DisplayVocabulary = ( this.props.vocabularyList ).map( ( word, index ) => {
-            return(
-                <span className="vocabularySpan" 
-                    key={ index } 
-                >
-                    { word }{" "}
-                </span>
-            )
-        })
 
         return (
         <div className="App">
@@ -77,12 +48,12 @@ class BuildCloze extends React.Component{
                 <h1>Build Cloze</h1> 
 
                   <h3>Text Vocbaulary:</h3>
-                    <p>{ DisplayVocabulary }</p>
+                    <p>< DisplayVocabulary vocab={ this.props.vocabularyList } /></p>
                     < AddVocabularyWords onSubmit={ this.moreVocab } />
 
                 <h3>Target Text:</h3>
 
-                    < DisplayText allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
+                    < DisplayText className={ "displayTargetText"} allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
 
             <div><button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button></div>
             </header>
