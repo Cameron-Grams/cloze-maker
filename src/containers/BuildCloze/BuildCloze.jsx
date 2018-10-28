@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 import {  vocabularyWord, updateWordDisplay } from '../../actions/textActions'; 
 import AddVocabularyWords from './AddVocabularyWords'; 
+import DisplayText from '../../components/DisplayText'; 
 import './BuildCloze.css'; 
 
 class BuildCloze extends React.Component{
@@ -39,6 +40,7 @@ class BuildCloze extends React.Component{
     }
 
     render() {
+        /*
         let DisplayText = this.props.paragraphs.map( ( paragraphArray, pindex ) => {
 
             let DisplayParagraph = paragraphArray.map( item => {
@@ -57,7 +59,7 @@ class BuildCloze extends React.Component{
                 <p className="displayTargetText" key={ pindex }>{ DisplayParagraph }</p>
             )
         })
-
+*/
 
         let DisplayVocabulary = ( this.props.vocabularyList ).map( ( word, index ) => {
             return(
@@ -80,7 +82,7 @@ class BuildCloze extends React.Component{
 
                 <h3>Target Text:</h3>
 
-                    { DisplayText }
+                    < DisplayText allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
 
             <div><button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button></div>
             </header>

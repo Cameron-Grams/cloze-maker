@@ -14,7 +14,6 @@ class FormToPrint extends React.Component{
                             className="wordSpan" 
                             id={ `paragraph_${ item.paragraph }_word_${ item.position }` } 
                             key={ item.position } 
-                            onClick={ event => this.recognizeWord( item.paragraph, item.position ) } 
                             value={ item.displayText }>
                             { item.displayShowing }{ " " } 
                         </span> )
