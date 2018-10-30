@@ -1,12 +1,26 @@
+#clozeIntro{
+    margin: 2% auto 0px;
+}
+
+
+.ClozeDiv{
+    max-height: 100vh;
+}
+
+
 .wordSpan:hover{
     color: brown; 
 }
 
+.displayForVocab{
+    background-color: #9a9f85;
+}
 
 .displayTargetText{
     max-width: 80%;
 }
 
 .newVocab{
-   font-size: calc(10px + 2vmin);
+    min-width: 400px;
+    font-size: calc(10px + 2vmin);
 }

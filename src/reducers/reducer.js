@@ -1,14 +1,12 @@
 import * as actionTypes from '../actions/actionTypes'; 
 
-// paragraphs is an array of arrays; the inner arrays are the collections of words in the paragraph in object form
-// wordObjects is an array of all of the words in object form; paragraphs are designated as a property
 const initialState = {
     title: "",
     originalText: " Mystery Text... ",
     originalWords: [],
     paragraphs: [], 
     wordObjects: [ {} ],
-    vocabularyList: [ "mootus", "applegate", "gymnast" ]   
+    vocabularyList: [ "" ]   
 };
 
 const Reducer = ( state = initialState, action ) => {

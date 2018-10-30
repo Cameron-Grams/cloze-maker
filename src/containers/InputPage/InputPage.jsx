@@ -16,6 +16,7 @@ class InputPage extends React.Component{
         <div className="App">
             <header className="App-header">
             <h3>Input Text</h3> 
+            <p>Add a title and text to create the worksheet:</p>
             < InputText onSubmit={ enterText } /> 
             </header>
         </div>

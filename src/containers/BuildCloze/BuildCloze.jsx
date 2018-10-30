@@ -43,12 +43,12 @@ class BuildCloze extends React.Component{
     render() {
 
         return (
-        <div className="App">
+        <div className="ClozeDiv App">
             <header className="App-header">
-                <h1>Build Cloze</h1> 
+                <h1 id="clozeIntro" >Build Cloze</h1> 
 
                   <h3>Text Vocbaulary:</h3>
-                    <p>< DisplayVocabulary vocab={ this.props.vocabularyList } /></p>
+                    <p className="displayForVocab">< DisplayVocabulary vocab={ this.props.vocabularyList } /></p>
                     < AddVocabularyWords onSubmit={ this.moreVocab } />
 
                 <h3>Target Text:</h3>
