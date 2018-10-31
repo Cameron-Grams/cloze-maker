@@ -36,6 +36,11 @@ const Reducer = ( state = initialState, action ) => {
             }
         }
 
+        case( actionTypes.reset ): {
+            return {
+                ...initialState
+            }
+        }
         default:
             return state
         ;

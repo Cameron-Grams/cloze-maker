@@ -85,3 +85,9 @@ export function updateWordDisplay( newArrayWordObjects ){
         }
     })
 }
+
+export function resetExercise(){
+    return({
+        type: actionTypes.reset
+    })
+}

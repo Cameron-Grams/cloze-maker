@@ -70,5 +70,3 @@ const mapStateToProps = ( state ) => ( {
 })
 
 export default connect( mapStateToProps, { vocabularyWord, updateWordDisplay } )( BuildCloze );
-
-// this page will have the selectable words from the array built from the original text
