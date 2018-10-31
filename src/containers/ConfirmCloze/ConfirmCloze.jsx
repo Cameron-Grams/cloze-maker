@@ -21,11 +21,11 @@ class ConfirmCloze extends React.Component {
       <div  >
         <div  id="buttonDiv" >
         <button className="clozeButton submitButton" onClick={ e => this.startNew() } >Start Over</button>
+        <button className="clozeButton submitButton" onClick={ e => this.props.history.push( 'build-cloze' ) } >Return to editing</button>
         <ReactToPrint
-          trigger={() => <div ><button className="clozeButton submitButton" >Print this out!</ button ></div> }
+          trigger={() => <div ><button className="clozeButton submitButton" >Print this form</ button ></div> }
           content={() => this.componentRef}
         />
-        <button className="clozeButton submitButton" onClick={ e => this.props.history.push( 'build-cloze' ) } >Return to editing</button>
         </div>
         <FormToPrint ref={el => (this.componentRef = el)} />
       </div>
