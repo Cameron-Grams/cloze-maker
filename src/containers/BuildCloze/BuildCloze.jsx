@@ -42,19 +42,20 @@ class BuildCloze extends React.Component{
 
     render() {
 
+        let vocab = ( this.props.vocabularyList.length >= 1 ) ? 
+                  <div>
+                    <h3>Text Vocbaulary:</h3>
+                    <p className="displayForVocab">< DisplayVocabulary vocab={ this.props.vocabularyList } /></p>
+                  </div>: null; 
+
         return (
         <div className="ClozeDiv App">
             <header className="App-header">
                 <h1 id="clozeIntro" >Build Cloze</h1> 
-
-                  <h3>Text Vocbaulary:</h3>
-                    <p className="displayForVocab">< DisplayVocabulary vocab={ this.props.vocabularyList } /></p>
-                    < AddVocabularyWords onSubmit={ this.moreVocab } />
-
-                <h3>Target Text:</h3>
-
-                    < DisplayText className={ "displayTargetText"} allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
-
+                <h3 className="targetTitle">Target Text:</h3>
+                < DisplayText className={ "displayTargetText"} allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
+                { vocab }
+                < AddVocabularyWords onSubmit={ this.moreVocab } />
             <div><button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button></div>
             </header>
         </div>

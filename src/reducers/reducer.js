@@ -6,7 +6,7 @@ const initialState = {
     originalWords: [],
     paragraphs: [], 
     wordObjects: [ {} ],
-    vocabularyList: [ "" ]   
+    vocabularyList: [ ]   
 };
 
 const Reducer = ( state = initialState, action ) => {
