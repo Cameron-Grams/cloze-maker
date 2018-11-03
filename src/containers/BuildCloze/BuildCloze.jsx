@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import {  vocabularyWord, updateWordDisplay } from '../../actions/textActions'; 
+import {  vocabularyWord, 
+          updateWordDisplay,
+          resetExercise           
+        } from '../../actions/textActions'; 
 import AddVocabularyWords from './AddVocabularyWords'; 
 import DisplayText from '../../components/DisplayText'; 
 import DisplayVocabulary from '../../components/DisplayVocabulary'; 
@@ -40,6 +43,11 @@ class BuildCloze extends React.Component{
         this.props.history.push( '/confirm-cloze' ); 
     }
 
+    startNew(){
+        this.props.history.push( 'input-text' ); 
+        this.props.resetExercise();
+    }
+
     render() {
 
         let vocab = ( this.props.vocabularyList.length >= 1 ) ? 
@@ -50,13 +58,17 @@ class BuildCloze extends React.Component{
 
         return (
         <div className="ClozeDiv App">
+            <div  id="buttonDiv" >
+                <button className="clozeButton submitButton" onClick={ e => this.startNew() } >Start Over</button>
+                <button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button>
+            </div>
             <header className="App-header">
+             
                 <h1 id="clozeIntro" >Build Cloze</h1> 
                 <h3 className="targetTitle">Target Text:</h3>
                 < DisplayText className={ "displayTargetText"} allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
                 { vocab }
                 < AddVocabularyWords onSubmit={ this.moreVocab } />
-            <div><button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button></div>
             </header>
         </div>
         );
@@ -70,4 +82,4 @@ const mapStateToProps = ( state ) => ( {
     vocabularyList: state.reducer.vocabularyList
 })
 
-export default connect( mapStateToProps, { vocabularyWord, updateWordDisplay } )( BuildCloze );
+export default connect( mapStateToProps, { vocabularyWord, updateWordDisplay, resetExercise } )( BuildCloze );
