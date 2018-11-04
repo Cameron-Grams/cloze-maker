@@ -30,7 +30,7 @@ li{
 .submitButton{
     margin: 7px;
     padding: 5px;
-    background-color: #959694;
+    background-color: #6e756d;
     font-size: calc(10px + 2vmin);
     border-radius: 5px;
 }
@@ -38,6 +38,7 @@ li{
 .submitButton:hover{
     background-color: #bf3b33;
     color: #f5f8f5;
+    cursor: pointer; 
 }
 
 

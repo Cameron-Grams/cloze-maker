@@ -12,6 +12,7 @@
 
 .wordSpan:hover{
     color: brown; 
+    cursor: pointer;
 }
 
 .displayForVocab{
