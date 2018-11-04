@@ -7,3 +7,5 @@ export const addVocabularyWord = 'ADD_VOCABULARY_WORD';
 export const updateWordDisplay = 'UPDATE_WORD_DISPLAY'; 
 
 export const reset = 'RESET'; 
+
+export const improperInputRecieved = 'IMPROPER_INPUT_RECEIVED'; 

@@ -38,6 +38,13 @@ export function registerOriginalText( values ){
     }
 };
 
+export function improperInput(){
+    return {
+        type: actionTypes.improperInputRecieved
+    }
+}
+
+
 export function vocabularyWord( selectedWord ){
     return({
         type: actionTypes.addVocabularyWord,
@@ -45,9 +52,6 @@ export function vocabularyWord( selectedWord ){
             vocabularyList: selectedWord 
         }
     })
-
-
-
 }; 
 
 export function updateWordDisplay( newArrayWordObjects ){

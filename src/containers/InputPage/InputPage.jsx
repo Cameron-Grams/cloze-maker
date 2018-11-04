@@ -1,23 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
 import InputText from './InputText'; 
-import { registerOriginalText } from '../../actions/textActions';
+import { registerOriginalText, improperInput } from '../../actions/textActions';
 import './InputPage.css'; 
 
 class InputPage extends React.Component{
 
-    render() {
-        const enterText = ( values ) => {
-            this.props.registerOriginalText( values );
-            this.props.history.push( "/build-cloze" );
+    enterText = ( values ) => {
+            console.log( ' in input page with values: ', values ); 
+
+            if ( values.originalTextInput && values.textTitleInput ){
+                this.props.registerOriginalText( values );
+                this.props.history.push( "/build-cloze" );
+            } else {
+                this.props.improperInput(); 
+            }
         }
+
+    render() {
+        console.log( this.props.errorMessage ); 
+        const pstyle={ color: "red" }
+        let displayError = this.props.errorMessage ? 
+            <p style={ pstyle } >Please Enter Exercise Text</p>:
+            null; 
+
+
+
 
         return (
         <div className="App">
             <header className="App-header">
-            <h3>Input Text</h3> 
+            <h2>Input Text</h2> 
             <p>Add a title and text to create the worksheet:</p>
-            < InputText onSubmit={ enterText } /> 
+
+            { displayError } 
+            
+            < InputText onSubmit={ this.enterText } /> 
             </header>
         </div>
         );
@@ -25,8 +43,8 @@ class InputPage extends React.Component{
 }
 
 const mapStateToProps = ( state ) => ({
-    originalText: state.originalText
+    errorMessage: state.reducer.errorMessage
 })
 
-export default connect( mapStateToProps, { registerOriginalText } )( InputPage );
+export default connect( mapStateToProps, { registerOriginalText, improperInput } )( InputPage );
 

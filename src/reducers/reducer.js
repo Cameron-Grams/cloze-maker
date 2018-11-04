@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/actionTypes'; 
 
 const initialState = {
+    errorMessage: false,
     title: "",
     originalText: " Mystery Text... ",
     originalWords: [],
@@ -17,8 +18,15 @@ const Reducer = ( state = initialState, action ) => {
                 ...state,
                 title: action.data.title,
                 paragraphs: action.data.paragraphs,
-                wordObjects: action.data.wordObjects
+                wordObjects: action.data.wordObjects,
+                errorMessage: !state.errorMessage
+            }
+        }
 
+        case( actionTypes.improperInputRecieved ): {
+            return {
+                ...state,
+                errorMessage: !state.errorMessage
             }
         }
 
