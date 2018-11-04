@@ -19,9 +19,16 @@ class BuildCloze extends React.Component{
     };
     
     recognizeWord( paragraphValue, positionValue ){
+        let punctuation = null;
         let updatedWordObjects = this.props.wordObjects.map( singleWordObject => {
             if ( ( singleWordObject.paragraph === paragraphValue ) && ( singleWordObject.position === positionValue ) ) {
-                singleWordObject.displayShowing = '_____________'; 
+                let punctuationArray = singleWordObject.originalWord.match(/['!"#$%&\\'()*+,\-./:;<=>?@[\\\]^_`{|}~']/g,"")
+                if ( punctuationArray ){
+                    punctuation = punctuationArray[ 0 ];
+                } else {
+                    punctuation = ""; 
+                }
+                singleWordObject.displayShowing = '_____________' + punctuation; 
             };
             return singleWordObject; 
         })
@@ -34,7 +41,6 @@ class BuildCloze extends React.Component{
     }
 
     moreVocab( wordValue ){
-        console.log( 'in build cloze with: ', wordValue )
         let newWordArray = wordValue.additionalVocabulary.split( " " );
         newWordArray.forEach( ( newWord ) => this.props.vocabularyWord( newWord ) ); 
     }

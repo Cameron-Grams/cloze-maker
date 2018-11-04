@@ -8,8 +8,8 @@ export function registerOriginalText( values ){
     let paragraphStrings = values.originalTextInput.split( "\n" ); 
     paragraphStrings.forEach( ( paragraph, pindex ) => {
         const wordsInParagraph = paragraph.split( " " );
-
         const paragraphWordArray = wordsInParagraph.map( ( word, index ) => {
+
             let wordObject = {};
 
             wordObject.paragraph = pindex;
@@ -46,10 +46,12 @@ export function improperInput(){
 
 
 export function vocabularyWord( selectedWord ){
+    let finalWord = selectedWord.replace(/['!"#$%&\\'()*+,\-./:;<=>?@[\\\]^_`{|}~']/g,"");
+
     return({
         type: actionTypes.addVocabularyWord,
         data: {
-            vocabularyList: selectedWord 
+            vocabularyList: finalWord 
         }
     })
 }; 
