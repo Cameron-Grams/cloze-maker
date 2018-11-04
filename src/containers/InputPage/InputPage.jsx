@@ -7,9 +7,8 @@ import './InputPage.css';
 class InputPage extends React.Component{
 
     enterText = ( values ) => {
-            console.log( ' in input page with values: ', values ); 
 
-            if ( values.originalTextInput && values.textTitleInput ){
+            if ( values.originalTextInput ){
                 this.props.registerOriginalText( values );
                 this.props.history.push( "/build-cloze" );
             } else {
@@ -18,7 +17,6 @@ class InputPage extends React.Component{
         }
 
     render() {
-        console.log( this.props.errorMessage ); 
         const pstyle={ color: "red" }
         let displayError = this.props.errorMessage ? 
             <p style={ pstyle } >Please Enter Exercise Text</p>:
