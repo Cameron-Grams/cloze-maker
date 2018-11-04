@@ -63,8 +63,6 @@ class BuildCloze extends React.Component{
                 <button className="submitButton" onClick={ this.goToConfirm } >Confirm Worksheet and Print</button>
             </div>
             <header className="App-header">
-             
-                <h1 id="clozeIntro" >Build Cloze</h1> 
                 <h3 className="targetTitle">Target Text:</h3>
                 < DisplayText className={ "displayTargetText"} allParagraphs={ this.props.paragraphs } onClick={ ( paragraph, position ) => this.recognizeWord( paragraph, position )}    /> 
                 { vocab }
