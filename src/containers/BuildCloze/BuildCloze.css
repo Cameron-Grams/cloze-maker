@@ -10,14 +10,14 @@
     max-height: 100vh;
 }
 
-
 .wordSpan:hover{
     color: brown; 
 }
 
 .displayForVocab{
     padding: 5px;
-    background-color: white;
+    background-color: #f0ecd7;
+    color: black;
     border-radius: 5px;
 }
 

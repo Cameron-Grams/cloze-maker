@@ -17,13 +17,9 @@ class InputPage extends React.Component{
         }
 
     render() {
-        const pstyle={ color: "red" }
         let displayError = this.props.errorMessage ? 
-            <p style={ pstyle } >Please Enter Exercise Text</p>:
+            <p className="errorMessage" >Please Enter Exercise Text</p>:
             null; 
-
-
-
 
         return (
         <div className="App">
