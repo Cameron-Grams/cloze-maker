@@ -7,7 +7,7 @@ class LandingPage extends React.Component{
         <div className="App">
             <header className="App-header">
             <div className="landingDiv" >
-            <h3>Landing Page</h3> 
+            <h3>Introduction</h3> 
             <p>This site is a web-based tool for teachers to create Cloze ( fill in the blanks ) exercises.  Advance through the pages
                 and complete the following steps:</p>
             <div id="landingListDiv">  

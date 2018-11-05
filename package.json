@@ -27,5 +27,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cameron-Grams/cloze-maker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cameron-Grams/cloze-maker/issues"
+  },
+  "homepage": "https://github.com/Cameron-Grams/cloze-maker#readme"
 }
