@@ -3,11 +3,13 @@ import { Field, reduxForm } from 'redux-form';
 
 let InputText = ( props ) => {
     return(
-        <form onSubmit={ props.handleSubmit } >
+        <div className="overallFormDiv" >  
+        <form className="textForm" onSubmit={ props.handleSubmit } >
             <div>< Field className = "textTitle generalInput" name="textTitleInput" component={ "input" } placeholder="Exercise Title"   /></div>
             <div>< Field className = "textField generalInput" name="originalTextInput" component={ "textarea" } placeholder="Exercise Text"   /></div>
             <button className="submitButton" type="submit" >Input Text</button>
         </form>
+        </div>
     )
 }
 

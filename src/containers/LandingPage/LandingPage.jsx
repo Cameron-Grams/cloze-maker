@@ -14,11 +14,10 @@ class LandingPage extends React.Component{
             <ul>
                <li>Chose a title for the exercise and enter the title into the "Exercise Title".</li>
                <li>Copy and paste the original text into the "Exercise Text" area and advance to Build the Cloze.</li>     
-               <li>Select the words to remove from the original text and enter as exercise vocabulary words.</li>     
+               <li>Select the words to remove from the original text and add to the vocabulary words.</li>     
                <li>Add additional vocabulary words that students can consider for the exercise, such as synonyms.</li>     
                <li>Advance to observe the exercise worksheet, return to edit or confirm print.</li>     
                <li>Print the worksheet or save it as a pdf under the selection of the printer.</li>     
-
             </ul> 
             </div>
             <button className="submitButton" onClick={ e => this.props.history.push( '/input-text' ) } >Advace to Input Text</button>

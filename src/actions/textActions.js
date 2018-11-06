@@ -5,11 +5,14 @@ export function registerOriginalText( values ){
     let paragraphs = [];
     let allWordObjects = [];
 
-    let paragraphStrings = values.originalTextInput.split( "\n" ); 
+    let dirtyParagraphs = values.originalTextInput.split( "\n" ); 
+
+    let paragraphStrings = dirtyParagraphs.filter( str => str !== "" ); 
+
     paragraphStrings.forEach( ( paragraph, pindex ) => {
         const wordsInParagraph = paragraph.split( " " );
-        const paragraphWordArray = wordsInParagraph.map( ( word, index ) => {
 
+        const paragraphWordArray = wordsInParagraph.map( ( word, index ) => {
             let wordObject = {};
 
             wordObject.paragraph = pindex;

@@ -2,8 +2,18 @@
     color: #bf3b33;
 }
 
+.overallFormDiv{
+    width: 100%; 
+    max-width: 900px;
+}
+
+.textForm{
+    margin: auto;
+    width: 100%;
+}
+
 .textField{
-    width: 70%; 
+    width: 100%; 
     min-height: 200px;
     min-width: 400px;
 }
