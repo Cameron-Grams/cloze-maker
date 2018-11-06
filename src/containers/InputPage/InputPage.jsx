@@ -24,7 +24,7 @@ class InputPage extends React.Component{
         return (
         <div className="App">
             <header className="App-header">
-            <h2>Input Text</h2> 
+            <h2>Input Text:</h2> 
             <p>Add a title and text to create the worksheet:</p>
 
             { displayError } 
