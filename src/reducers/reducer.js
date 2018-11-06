@@ -4,7 +4,6 @@ const initialState = {
     errorMessage: false,
     title: "",
     originalText: " Mystery Text... ",
-    originalWords: [],
     paragraphs: [], 
     wordObjects: [ {} ],
     vocabularyList: [ ]   
