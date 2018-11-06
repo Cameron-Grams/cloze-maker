@@ -7,7 +7,6 @@ import './InputPage.css';
 class InputPage extends React.Component{
 
     enterText = ( values ) => {
-
             if ( values.originalTextInput ){
                 this.props.registerOriginalText( values );
                 this.props.history.push( "/build-cloze" );
@@ -41,4 +40,3 @@ const mapStateToProps = ( state ) => ({
 })
 
 export default connect( mapStateToProps, { registerOriginalText, improperInput } )( InputPage );
-

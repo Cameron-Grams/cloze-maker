@@ -15,6 +15,3 @@ AddVocabularyWords = reduxForm({
 })( AddVocabularyWords );
 
 export default AddVocabularyWords;
-
-
-
