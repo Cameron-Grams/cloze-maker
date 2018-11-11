@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
@@ -14,7 +16,7 @@
     "save": "^2.3.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,5 +42,5 @@
   "bugs": {
     "url": "https://github.com/Cameron-Grams/cloze-maker/issues"
   },
-  "homepage": "https://github.com/Cameron-Grams/cloze-maker/"
+  "homepage": "."
 }
