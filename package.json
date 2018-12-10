@@ -2,6 +2,9 @@
   "name": "cloze-maker",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "11.4.0"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "path": "^0.12.7",
