@@ -1,0 +1,32 @@
+#clozeIntro{
+    margin: 2% auto 0px;
+}
+
+.targetTitle{
+    margin: 15px auto 0px;
+}
+
+.ClozeDiv{
+    max-height: 100vh;
+}
+
+.wordSpan:hover{
+    color: brown; 
+    cursor: pointer;
+}
+
+.displayForVocab{
+    padding: 5px 10px 5px 10px;
+    background-color: #f0ecd7;
+    color: black;
+    border-radius: 5px;
+}
+
+.displayTargetText{
+    max-width: 80%;
+}
+
+.newVocab{
+    min-width: 400px;
+    font-size: calc(10px + 2vmin);
+}

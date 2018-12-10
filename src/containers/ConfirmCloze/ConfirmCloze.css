@@ -1,0 +1,44 @@
+#buttonDiv{
+    background-color: #1e2324;
+    width: 100%; 
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.clozeButton{
+    text-align: center;
+    padding: 10px; 
+    margin: 10px; 
+}
+
+.finalForm{
+    background-color: white;
+}
+
+.finalForm-header {
+  background-color: white;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: #f5f8f5;
+}
+
+#finalTitle{
+    text-align: center;
+    color: black;
+}
+
+.textToPrint{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif; 
+}
+
+#printComponentDiv{
+    max-width: 75%;
+    color: black;
+    padding: 20px; 
+}
